@@ -2,59 +2,7 @@ p {
     font-size: 0.9rem;
     line-height: 1.25rem;
 }
-.chromatic-aberration {
-    position: relative;
-    width: fit-content;
-}
-.ca-purple,
-.ca-green {
-    
-    position: absolute;
-    top: 0;
-    left: 0;
-    
-}
-/* Purple duplicate */
-.ca-purple {
-    color: purple;
-    animation: distort-purple 4s infinite; 
-    z-index: -1;
-}
-@keyframes distort-purple{
-    0%, 100%{
-        transform: translate(-1px, 1px) skew(-6deg);
-    }
-    25%{
-        transform: translate(-1px, -1px) skew(5deg);
-    }
-    50%{
-        transform: translate(1px, -1px) skew(7deg);
-    }
-    75%{
-        transform: translate(1px, 1px) skew(-5deg);
-    }
-}
 
-/* Green duplicate */
-.ca-green {
-    color: green;
-    animation: distort-green 6s infinite;  
-    z-index: -2;
-}
-@keyframes distort-green{
-    0%, 100%{
-        transform: translate(1px, -1px) skew(5deg);
-    }
-    25%{
-        transform: translate(1px, 1px) skew(-5deg);
-    }
-    50%{
-        transform: translate(-1px, 1px) skew(-5deg);
-    }
-    75%{
-        transform: translate(-1px, -1px) skew(5deg);
-    }
-}
 
 .hero{
     width: 100%;
@@ -91,6 +39,16 @@ p {
 }
 .hero-right{
     width: 30%;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.hero-right-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -98,7 +56,7 @@ p {
     background-color: #161616;
     padding: 25px;
     border-radius: 7px;
-    overflow: hidden;
+    
 }
 .hero-image-container{
     max-width: 150px;
@@ -117,5 +75,109 @@ p {
     display: flex;
     gap: 0.3rem;
     justify-content: center;
+    position: relative;
 
+}
+
+.chromatic-aberration {
+    position: relative;
+    width: fit-content;
+}
+.ca-text-purple,
+.ca-text-green 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: blur(0.01em);
+}
+
+.ca-green,
+.ca-purple {
+    position: absolute;
+    top: 0;
+    left: 0; 
+    opacity: 100%;
+    filter: blur(0.02em);
+    
+}
+/* Purple duplicate */
+.ca-text-purple {
+    color: rgb(150, 0, 209);
+    animation: text-distort-purple 4s infinite; 
+    z-index: -1;
+}
+.ca-purple{
+    /* background-color: purple;*/
+    animation: distort-purple 4s infinite; 
+    z-index: -1;
+}
+@keyframes text-distort-purple{
+    0%, 100%{
+        transform: translate(-1px, 1px) skew(-4deg);
+    }
+    25%{
+        transform: translate(-1px, -1px) skew(3deg);
+    }
+    50%{
+        transform: translate(1px, -1px) skew(5deg);
+    }
+    75%{
+        transform: translate(1px, 1px) skew(-3deg);
+    }
+}
+@keyframes distort-purple{
+    0%, 100%{
+        transform:scale(1, 1.01) translate(-1px, 1px) skew(-2deg);
+    }
+    25%{
+        transform: translate(1px, 2px) skew(2deg);
+    }
+    50%{
+        transform: scale(1, 1.01) translate(1px, 2px) skew(2deg);
+    }
+    75%{
+        transform: translate(-2px, 1px) skew(-2deg);
+    }
+}
+
+/* Green duplicate */
+.ca-text-green {
+    color: rgb(0, 194, 42);
+    animation: text-distort-green 6s infinite;  
+    z-index: -2;
+}
+.ca-green {
+    /*background-color: green; */
+    animation: distort-green 6s infinite;  
+    z-index: -2;
+}
+
+@keyframes text-distort-green{
+    0%, 100%{
+        transform: translate(2px, -1px) skew(3deg);
+    }
+    25%{
+        transform: translate(1px, 2px) skew(-3deg);
+    }
+    50%{
+        transform: translate(-1px, 1px) skew(-3deg);
+    }
+    75%{
+        transform: translate(-2px, -1px) skew(3deg);
+    }
+}
+@keyframes distort-green{
+    0%, 100%{
+        transform: translate(2px, 2px) skew(2deg);
+    }
+    25%{
+        transform: scale(1, 1.01) translate(-1px, 1px) skew(-1deg);
+    }
+    50%{
+        transform: translate(-1px, 2px) skew(-3deg);
+    }
+    75%{
+        transform: scale(1, 1.01) translate(1px, 1px) skew(1deg);
+    }
 }
