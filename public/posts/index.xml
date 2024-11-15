@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on RVDE</title>
+    <link>//localhost:1313/posts/</link>
+    <description>Recent content in Posts on RVDE</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Nov 2024 14:01:57 +0200</lastBuildDate><atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>test</title>
+      <link>//localhost:1313/posts/test/</link>
+      <pubDate>Fri, 15 Nov 2024 14:01:57 +0200</pubDate>
+      
+      <guid>//localhost:1313/posts/test/</guid>
+      <description>&lt;h1 id=&#34;title-what-a-start&#34;&gt;Title, what a start&lt;/h1&gt;
+&lt;h2 id=&#34;rvdekid-jimi-kampman&#34;&gt;RVDEKID, Jimi Kampman&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;m an artist from Finland, with a heavy passion for programming.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h1 id="title-what-a-start">Title, what a start</h1>
+<h2 id="rvdekid-jimi-kampman">RVDEKID, Jimi Kampman</h2>
+<p>I&rsquo;m an artist from Finland, with a heavy passion for programming.</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>test2</title>
+      <link>//localhost:1313/posts/test2/</link>
+      <pubDate>Fri, 15 Nov 2024 14:01:57 +0200</pubDate>
+      
+      <guid>//localhost:1313/posts/test2/</guid>
+      <description>&lt;h1 id=&#34;test-2&#34;&gt;Test 2&lt;/h1&gt;
+&lt;p&gt;Another test&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h1 id="test-2">Test 2</h1>
+<p>Another test</p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>
