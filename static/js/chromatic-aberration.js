@@ -3,8 +3,8 @@ document.querySelectorAll('.chromatic-aberration').forEach((element) => {
     const purpleText = document.createElement('span');
     const greenText = document.createElement('span');
 
-    purpleText.className = 'text purple';
-    greenText.className = 'text green';
+    purpleText.className = 'ca-purple';
+    greenText.className = 'ca-green';
 
     purpleText.textContent = text;
     greenText.textContent = text;

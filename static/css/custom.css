@@ -6,8 +6,8 @@ p {
     position: relative;
     width: fit-content;
 }
-.chromatic-aberration .text.purple,
-.chromatic-aberration .text.green {
+.ca-purple,
+.ca-green {
     
     position: absolute;
     top: 0;
@@ -15,7 +15,7 @@ p {
     
 }
 /* Purple duplicate */
-.chromatic-aberration .text.purple {
+.ca-purple {
     color: purple;
     animation: distort-purple 4s infinite; 
     z-index: -1;
@@ -36,7 +36,7 @@ p {
 }
 
 /* Green duplicate */
-.chromatic-aberration .text.green {
+.ca-green {
     color: green;
     animation: distort-green 6s infinite;  
     z-index: -2;
