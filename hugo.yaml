@@ -23,17 +23,25 @@ params:
 
 menu:
   main:
-    - identifier: categories
-      name: Categories
-      url: /categories/
+    - identifier: portfolio
+      name: PORTFOLIO
+      url: /portfolio/
       weight: 10
 
-    - identifier: tags
-      name: Tags
-      url: /tags/
+    - identifier: art
+      name: ART
+      url: /art/
       weight: 20
 
-    - identifier: archives
-      name: Archives
-      url: /archives/
+    - identifier: cv
+      name: CV
+      url: /cv/
       weight: 30
+
+socialIcons:
+  - name: "github"
+    url: "https://github.com/yourusername"
+  - name: "twitter"
+    url: "https://twitter.com/yourhandle"
+  - name: "kofi"
+    url: "https://kofi.com/yourhandle"
