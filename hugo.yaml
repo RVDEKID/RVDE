@@ -4,10 +4,22 @@ title: RVDE
 theme: PaperModX
 
 params:
+  profileMode:
+    enabled: true
+    subtitle: "Jimi Kampman, Finland"
+    buttons:
+      - name: Archive
+        url: "/archives"
+      - name: Instagram
+        url: "https://www.instagram.com/rvdekid/"
+
   cover:
-    linkFullImages: true
+    linkFullImages: false
   
   ShowBreadcrumbs: true
+
+  defaultTheme: dark
+  disableThemeToggle: false
 
 menu:
   main:
