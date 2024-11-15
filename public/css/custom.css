@@ -2,6 +2,60 @@ p {
     font-size: 0.9rem;
     line-height: 1.25rem;
 }
+.chromatic-aberration {
+    position: relative;
+    width: fit-content;
+}
+.chromatic-aberration .text.purple,
+.chromatic-aberration .text.green {
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}
+/* Purple duplicate */
+.chromatic-aberration .text.purple {
+    color: purple;
+    animation: distort-purple 4s infinite; 
+    z-index: -1;
+}
+@keyframes distort-purple{
+    0%, 100%{
+        transform: translate(-1px, 1px) skew(-6deg);
+    }
+    25%{
+        transform: translate(-1px, -1px) skew(5deg);
+    }
+    50%{
+        transform: translate(1px, -1px) skew(7deg);
+    }
+    75%{
+        transform: translate(1px, 1px) skew(-5deg);
+    }
+}
+
+/* Green duplicate */
+.chromatic-aberration .text.green {
+    color: green;
+    animation: distort-green 6s infinite;  
+    z-index: -2;
+}
+@keyframes distort-green{
+    0%, 100%{
+        transform: translate(1px, -1px) skew(5deg);
+    }
+    25%{
+        transform: translate(1px, 1px) skew(-5deg);
+    }
+    50%{
+        transform: translate(-1px, 1px) skew(-5deg);
+    }
+    75%{
+        transform: translate(-1px, -1px) skew(5deg);
+    }
+}
+
 .hero{
     width: 100%;
     padding: 0;
@@ -22,6 +76,10 @@ p {
     width: 70%;
     margin-top: auto;
     margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 .hero-left h1{
