@@ -72,7 +72,10 @@
             <div class="logo">
                 {{- $label_text := (site.Params.logo.text | default site.Title) }}
                 {{- if site.Title }}
-                <a class="chromatic-aberration" href="{{ "" | absURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
+                <button class="chromatic-aberration home-button" onclick="navigateTo('home')" accesskey="h" title="{{ $label_text }} (Alt + H)">
+                  RVDE
+                </button>
+                
                     {{- if site.Params.logo.icon }}
                     {{- $img := resources.Get site.Params.logo.icon }}
                     {{- if $img }}
@@ -95,7 +98,7 @@
                         height="{{- site.Params.logo.iconHeight | default "30" -}}" width="{{- site.Params.logo.iconWidth | default "30" -}}">
                     {{- end -}}
                     {{- end -}}
-                    {{- $label_text -}}
+                    
                 </a>
                 {{- end }}
                 <span class="logo-switches">
@@ -125,25 +128,22 @@
             </div>
             {{- $currentPage := . }}
             <ul id="menu">
-                {{- range site.Menus.main }}
-                {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL)) | absURL }}
-                {{- $page_url:= $currentPage.Permalink }}
-                {{- $is_search := eq (site.GetPage .KeyName).Layout `search` }}
-                <li>
-                    <a href="{{ $menu_item_url }}" title="{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
-                    {{- if $is_search -}}data-no-instant{{- end -}}
-                    {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}
-                    {{- if strings.HasPrefix $page_url $menu_item_url }} class="active" {{- end }}
-                    {{- if .Params.External }} target="_blank" {{- end }}
-                    >
-                        {{- .Pre }}
-                        {{- .Name -}}
-                        {{ .Post -}}
-                        {{- if .Params.External }}<span class="external-link">{{ safeHTML (index $.Site.Data.svg "external-link") }}</span>{{- end }}
-                    </a>
-                </li>
-                {{- end }}
-            </ul>
+              <li>
+                  <button onclick="navigateTo('portfolio')" title="PORTFOLIO">
+                      PORTFOLIO
+                  </button>
+              </li>
+              <li>
+                  <button onclick="navigateTo('art')" title="ART">
+                      ART
+                  </button>
+              </li>
+              <li>
+                  <button onclick="navigateTo('cv')" title="CV">
+                      CV
+                  </button>
+              </li>
+          </ul>
         </nav>
     </header>
     

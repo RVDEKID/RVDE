@@ -1,20 +1,15 @@
 {{ define "main" }}
 <section class="hero">
-  <div class="hero-container">
-    <div class="hero-left">
-      <h1 class="chromatic-aberration">RVDEKID</h1>
-      <p >Jimi Kampman, Finland</p>
+    <div class="title-bar">
+        <h1 class="chromatic-aberration"> </h1>
     </div>
-    <div class="hero-right">
-    <div class="hero-right-container chromatic-aberration">
-      <div class="hero-image-container">
-        <img class="hero-image" src="/img/omakuva.jpg" alt="hero image">
-      </div>
-      <p class="hero-description">Graphic / web designer from Rovaniemi, Finland. <br> Semi after work.</p>
+    <div class="dynaPanel-container">
+    <div id="left-panel" class="dynaPanel dynaPanel-left">
+    </div>
+    <div id="right-panel" class="dynaPanel dynaPanel-right">
+
     </div>
   </div>
-  </div>
-    {{ partial "customSocialIcons.html" . }}
   
 </section>
 {{ end }}

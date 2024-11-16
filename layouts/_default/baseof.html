@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ .Params.language | default .Language.Lang }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
-<link rel="stylesheet" href="{{ "css/custom.css" | relURL }}" />
+<link rel="stylesheet" href="{{ "css/custom.css?v=1.0" | relURL }}" />
+<!-- SimpleLightbox CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplelightbox@2.4.0/dist/simple-lightbox.min.css">
+<!-- Masonry.js CSS (if you want some basic styling) -->
+<link rel="stylesheet" href="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.min.css">
 
 <head>
     {{- partial "head.html" . }}
@@ -22,7 +26,12 @@
     {{ partial "footer.html" . -}}
     {{- block "body_end" . }}{{ end }}
 
+
+<script src="https://cdn.jsdelivr.net/npm/simplelightbox@2.4.0/dist/simple-lightbox.min.js"></script>
+<script src="/js/masonry.pkgd.min.js"></script>
 <script src="/js/chromatic-aberration.js"></script>
+<script src="/js/dyna-panels.js"></script>
+
 </body>
 
 </html>
