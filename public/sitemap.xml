@@ -5,6 +5,12 @@
     <loc>//localhost:1313/categories/</loc>
     <lastmod>2024-11-15T14:01:57+02:00</lastmod>
   </url><url>
+    <loc>//localhost:1313/charts/</loc>
+    <lastmod>2024-11-15T14:01:57+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/charts/</loc>
+    <lastmod>2024-11-15T14:01:57+02:00</lastmod>
+  </url><url>
     <loc>//localhost:1313/tags/css/</loc>
     <lastmod>2024-11-15T14:01:57+02:00</lastmod>
   </url><url>
@@ -17,10 +23,25 @@
     <loc>//localhost:1313/posts/</loc>
     <lastmod>2024-11-15T14:01:57+02:00</lastmod>
   </url><url>
+    <loc>//localhost:1313/charts/t8-alisa/</loc>
+    <lastmod>2024-11-15T14:01:57+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/charts/t8-heihachi/</loc>
+    <lastmod>2024-11-15T14:01:57+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/charts/t8-law/</loc>
+    <lastmod>2024-11-15T14:01:57+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/charts/t8-reina/</loc>
+    <lastmod>2024-11-15T14:01:57+02:00</lastmod>
+  </url><url>
     <loc>//localhost:1313/tags/</loc>
     <lastmod>2024-11-15T14:01:57+02:00</lastmod>
   </url><url>
     <loc>//localhost:1313/categories/tech/</loc>
+    <lastmod>2024-11-15T14:01:57+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/tekken-8/</loc>
     <lastmod>2024-11-15T14:01:57+02:00</lastmod>
   </url><url>
     <loc>//localhost:1313/posts/test/</loc>
@@ -28,6 +49,26 @@
   </url><url>
     <loc>//localhost:1313/posts/test2/</loc>
     <lastmod>2024-11-15T14:01:57+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/charts/vf5-brad/</loc>
+    <lastmod>2024-11-15T14:01:57+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/charts/vf5-elblaze/</loc>
+    <lastmod>2024-11-15T14:01:57+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/charts/vf5-pai/</loc>
+    <lastmod>2024-11-15T14:01:57+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/charts/vf5-sarah/</loc>
+    <lastmod>2024-11-15T14:01:57+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/charts/vf5-vanessa/</loc>
+    <lastmod>2024-11-15T14:01:57+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/virtua-fighter-5/</loc>
+    <lastmod>2024-11-15T14:01:57+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/charts/vf5-leifei/</loc>
   </url><url>
     <loc>//localhost:1313/archives/</loc>
   </url><url>

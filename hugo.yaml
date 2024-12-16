@@ -45,3 +45,9 @@ socialIcons:
     url: "https://twitter.com/yourhandle"
   - name: "kofi"
     url: "https://kofi.com/yourhandle"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+      hardWrap: true

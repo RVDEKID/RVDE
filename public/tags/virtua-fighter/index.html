@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+<script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><link rel="stylesheet" href="/css/custom.css?v=1.0" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplelightbox@2.4.0/dist/simple-lightbox.min.css">
+
+<link rel="stylesheet" href="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.min.css">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Virtua Fighter | RVDE</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="//localhost:1313/tags/virtua-fighter/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.cd0c10bc3cbe679e2e41b40a4edfe5a6f5e2a27e696a2b7f0aa7e1b9874ad556.css" integrity="sha256-zQwQvDy&#43;Z54uQbQKTt/lpvXion5pait/CqfhuYdK1VY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="//localhost:1313/favicon.ico">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" href="//localhost:1313/tags/virtua-fighter/index.xml">
+<link rel="alternate" hreflang="en" href="//localhost:1313/tags/virtua-fighter/">
+
+<meta name="twitter:title" content="Virtua Fighter | RVDE" />
+<meta name="twitter:description" content="" />
+<meta property="og:title" content="Virtua Fighter | RVDE" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="//localhost:1313/tags/virtua-fighter/" />
+
+
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+
+</head>
+
+<body class="list-page dark type-tags kind-term layout-" id="top"><script data-no-instant>
+    function switchTheme(theme) {
+      switch (theme) {
+        case 'light':
+          document.body.classList.remove('dark');
+          break;
+        case 'dark':
+          document.body.classList.add('dark');
+          break;
+        
+        default:
+          if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.classList.add('dark');
+          }
+      }
+    }
+    
+    function isDarkTheme() {
+      return document.body.className.includes("dark");
+    }
+    
+    function getPrefTheme() {
+      return localStorage.getItem("pref-theme");
+    }
+    
+    function setPrefTheme(theme) {
+      switchTheme(theme)
+      localStorage.setItem("pref-theme", theme);
+    }
+    
+    const toggleThemeCallbacks = {}
+    toggleThemeCallbacks['main'] = (isDark) => {
+      
+      if (isDark) {
+        setPrefTheme('light');
+      } else {
+        setPrefTheme('dark');
+      }
+    }
+    
+    
+    
+    
+    window.addEventListener('toggle-theme', function() {
+      
+      const isDark = isDarkTheme()
+      for (const key in toggleThemeCallbacks) {
+        toggleThemeCallbacks[key](isDark)
+      }
+    });
+    
+    
+    function toggleThemeListener() {
+      
+      window.dispatchEvent(new CustomEvent('toggle-theme'));
+    }
+    
+    </script>
+    <script>
+      
+      (function() {
+        const defaultTheme = 'dark';
+        const prefTheme = getPrefTheme();
+        const theme = prefTheme ? prefTheme : defaultTheme;
+    
+        switchTheme(theme);
+      })();
+    </script>
+    
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <button class="chromatic-aberration home-button" onclick="navigateTo('home')" accesskey="h" title="RVDE (Alt + H)">
+                  RVDE
+                </button></a>
+                <span class="logo-switches">
+                    <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </span>
+            </div>
+            <ul id="menu">
+              <li>
+                  <button onclick="navigateTo('portfolio')" title="PORTFOLIO">
+                      PORTFOLIO
+                  </button>
+              </li>
+              <li>
+                  <button onclick="navigateTo('art')" title="ART">
+                      ART
+                  </button>
+              </li>
+              <li>
+                  <button onclick="navigateTo('cv')" title="CV">
+                      CV
+                  </button>
+              </li>
+          </ul>
+        </nav>
+    </header>
+    <main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="//localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="//localhost:1313/tags/">Tags</a></div>
+  <h1>
+    tag: Virtua Fighter</h1><div class="inline-links">
+  
+  
+  <span><a href="//localhost:1313/tags/virtua-fighter/index.xml" target="_blank">RSS</a></span></div>
+</header>
+
+
+
+
+
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>VF5-Brad
+    </h2>
+  </header>
+  <section class="entry-content">
+    
+      <p>
+## Cond
+**1,1 F/U/D** *DUCKING / SLIPPING* **1,1,1,2** knocks
+**1,1,2** low
+1,F1,2 1,2 **F1 F/U/D** *DUCKING / SLIPPING* midstart 12f
+F1,2
+B1,2 F/U/D** *DUCKING / SLIPPING* **DF1,1**
+**DF1,2**
+**DF1,12**
+**DB1** steve long slow low
+**2,1** F/U/D *DUCKING / SLIPPING* close range
+2,1,2
+**F2,1** F/U/D *DUCKING / SLIPPING*
+**B2** F/U/D *DUCKING / SLIPPING* mega range
+**D2,2** lowhigh
+**DB2** long low
+**DF2** pretty fast mid
+UF2 on some knockdowns
+**12,1,D/U&gt;1**
+**12,1,B&gt;1** combostart, feels cool
+**F12** combostart
+**BF12** knocks FAR (ringout)
+D12,1,1,F1 increasing in hits from past 2, leave out 1s to shorten
+**23,2** big sweeping high to sweeping low
+**F23** launcher
+**D23** sweeping low
+**DB23** mega long low
+123 ga muay
+wall &gt; F123?
+!! *DUCKING* F123, 1,1F, F1F, B1F, B1,2F, 2,1F, B2F, 12F
+B sway back U/D Slipping
+**1,1** F/U/D *DUCKING / SLIPPING*
+**1,1,1,1** F/U/D *DUCKING / SLIPPING*
+**12,1** launch, &gt;dash 2,1,2 or 2,1F
+12,U/D1
+**23**
+1**3** grabs
+13
+F13
+B13
+!! *LONG DUCKING* F123F
+**1,1,1** smol launch
+**2,2**
+**23** big launch
+!! *SWAY BACK* B123
+F Ducking U/D slipping
+1 F/U/D *DUCKING / SLIPPING*
+1,1,2 (then 2 on guard or hit)
+**1,1,D2**
+**2** UF2 after
+12 big back evasive punch
+23 long low
+!! *SLIPPING* U/D123
+F Duckng B Sway U/D Slipping
+**1,1,2 (then 2 on guard or hit)**
+**1,1,D2**
+**2**
+12
+23
+## Full
+**1,1 F/U/D** *DUCKING / SLIPPING* **1,1,1,2** knocks
+**1,1,2** low
+1,F1,2 1,2 **F1 F/U/D** *DUCKING / SLIPPING* midstart 12f
+F1,2
+B1 F/U/D *DUCKING / SLIPPING*
+B1,2 F/U/D *DUCKING / SLIPPING*
+BB1 *BT*
+D1
+c.DF1
+**DF1,1**
+**DF1,2**
+**DF1,12**
+**DB1** steve long slow low
+2 F/U/D *DUCKING / SLIPPING*
+**2,1** F/U/D *DUCKING / SLIPPING* close range
+2,1,2
+Fh2
+**F2,1** F/U/D *DUCKING / SLIPPING*
+FF2
+**B2** F/U/D *DUCKING / SLIPPING* mega range
+BB2 *BT*
+**D2,2** lowhigh
+**DB2** long low
+**DF2** pretty fast mid
+UF2
+12 F/U/D *DUCKING / SLIPPING*
+12,1,1
+**12,1,D/U&gt;1**
+**12,1,B&gt;1** combostart, feels cool
+**F12** combostart
+B12
+**BF12** knocks FAR (ringout)
+D12,1,1,F1 increasing in hits from past 2, leave out 1s to shorten
+DF12,1
+DB12
+UF12
+**23,2** big sweeping high to sweeping low
+**F23** launcher
+BF23
+**D23** sweeping low
+**DB23** mega long low
+123 ga muay
+wall &gt; F123
+!! *DUCKING* F123, 1,1F, F1F, B1F, B1,2F, 2,1F, B2F, 12F
+B sway back
+U/D Slipping
+**1,1** F/U/D *DUCKING / SLIPPING*
+**1,1,1,1** F/U/D *DUCKING / SLIPPING*
+2
+**12,1** launch, &gt;dash 2,1,2 or 2,1F
+12,U/D1
+**23**
+1**3** grabs
+13
+F13
+B13
+!! *LONG DUCKING* F123F
+**1,1,1** smol launch
+**2,2**
+12
+**23** big launch
+!! *SWAY BACK* B123
+F Ducking
+U/D slipping
+1 F/U/D *DUCKING / SLIPPING*
+1,1,2 (then 2 on guard or hit)
+**1,1,D2**
+**2** UF2 after
+12 big back evasive punch
+23 long low
+!! *SLIPPING* U/D123
+F Duckng
+B Sway
+U/D Slipping
+**1,1,2 (then 2 on guard or hit)**
+**1,1,D2**
+**2**
+12
+23</p>
+    
+  </section>
+  <footer class="entry-footer"><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" style="user-select: text;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" style="user-select: text;"></rect><line x1="16" y1="2" x2="16" y2="6" style="user-select: text;"></line><line x1="8" y1="2" x2="8" y2="6" style="user-select: text;"></line><line x1="3" y1="10" x2="21" y2="10" style="user-select: text;"></line></svg>
+  <span>November 15, 2024</span></span><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon" style="user-select: text;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" style="user-select: text;"></path><line x1="7" y1="7" x2="7" y2="7" style="user-select: text;"></line></svg>
+  <span class="post-tags"><a href="//localhost:1313/tags/virtua-fighter/">Virtua Fighter</a></span></span>
+</footer>
+  <a class="entry-link" aria-label="post link to VF5-Brad" href="//localhost:1313/charts/vf5-brad/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>VF5-ElBlaze
+    </h2>
+  </header>
+  <section class="entry-content">
+    
+      <p>cond
+**1,1,1,2**(*F*) *ROCKET*
+**1,1,2** knocks
+1,2
+**1,D2** hl
+**F1,2** knocks
+**BF1,1,2 high knock, short range**
+**BF1,1,D2 low mix** **BF1,2,2** (*F*) *ROCKET* or B for bt
+**B1,2** (*F*) *ROCKET*
+**DB1** slow low
+**2,2,2**, (*F*) *ROCKET*
+**F2** (*F*) *ROCKET*
+**B2,1,1**
+**B2,1,2** (*F*) *ROCKET* or B for bt
+**D2,1,2** (*F*) *ROCKET* GOAT move for looping and mixing
+**DB2**
+**UF2** (*F*) *ROCKET* idk bout rocket here
+**c.F12** big crumple
+**UF12,2** (*F*) *ROCKET*
+**F23** launch
+**D23**
+**DB23** slow stationary low dropkick
+**123 deflect**
+**123,1**
+**123,2, 13 on hit**
+**123,12**
+UF/DF123 *tiger step*
+1, 13 on hit
+2 (*F*) *ROCKET*
+13, 13
+**U1** combostart
+DF1,1DF/UF *TIGER STEP*
+B2,1DF/UF *TIGER STEP*
+D2,1DF/UF *TIGER STEP*
+!! *ROCKET* F123 1,1,1,2F, BF1,2,2F, B1,2F 2,2,2F, F2F, B2,1,2F, D2,1,2F, UF2F, UF12,2F, *TS*2F
+**1** body slam, easy to whiff
+**2** knee, combo start
+**D2** low
+**UF2**, (*F*) *ROCKET*
+**UF23,1**
+**UF23,2** (*F*) *ROCKET*
+**13** grab
+**D13** crouch grab
+!! *MOMENTARY TD* (wall behind)UB123
+**1**
+**2**
+**13**
+123
+opponent down
+DF2
+U1
+j.1
+DF12
+DF13 many throw variations
+throws
+13
+F13
+HCB13
+B13
+BF13
+BB13 (*B*) *ROCKET*
+HCF13
+UF13
+at wall
+FB13
+FF13
+at half wall
+F13
+many down dir crouch throws
+## full
+**1,1,1,2**(*F*) *ROCKET*
+**1,1,2** knocks
+1,2
+**1,D2** hl
+**F1,2** knocks
+**BF1,1,2 high knock, short range**
+**BF1,1,D2 low mix** **BF1,2,2** (*F*) *ROCKET* or B for bt
+**B1,2** (*F*) *ROCKET*
+B1,2,1
+D1
+DF1,1,2
+**DB1** slow low
+HCF1, 1, (2 on 1 hit, tight timing)
+**2,2,2**, (*F*) *ROCKET*
+**F2** (*F*) *ROCKET*
+FF2 (*F*) *ROCKET*
+**B2,1,1**
+**B2,1,2** (*F*) *ROCKET* or B for bt
+BF2 (*F*) *ROCKET* , or B on guard, does a move
+D2,1,1
+**D2,1,2** (*F*) *ROCKET*
+c.2 / **DB2**
+DF2
+U2 (*F*) *ROCKET*
+**UF2** (*F*) *ROCKET* idk bout rocket here
+UB2 (*F*) *ROCKET*
+12,1,1
+F12,1
+B12
+BF12
+B&gt;DF12, 13 on hit, &gt;*F*
+D12
+**c.F12** big crumple
+DF12, 13 on hit, &gt;*F*
+DB12
+U12
+**UF12,2** (*F*) *ROCKET*
+23
+**F23** launch
+B&gt;DF23, 13 on hit
+**D23**
+DF23 (*F*) *ROCKET*
+**DB23** slow stationary low dropkick
+UF23 (*F*) *ROCKET* or B for bt
+**123 deflect**
+**123,1**
+**123,2, 13 on hit**
+**123,12**
+UF/DF123 *tiger step*
+1, 13 on hit
+2 (*F*) *ROCKET*
+13, 13
+UB123, (*F*) big jump back into *ROCKET*
+**U1** combostart
+DF1,1DF/UF *TIGER STEP*
+B2,1DF/UF *TIGER STEP*
+D2,1DF/UF *TIGER STEP*
+!! *ROCKET* F123 1,1,1,2F, BF1,2,2F, B1,2F 2,2,2F, F2F, B2,1,2F, D2,1,2F, UF2F, UF12,2F, *TS*2F
+**1** body slam, easy to whiff
+**2** knee, combo start
+**D2** low
+**UF2**, (*F*) *ROCKET*
+12,2 (*F*) *ROCKET*
+23
+**UF23,1**
+**UF23,2** (*F*) *ROCKET*
+**13** grab
+**D13** crouch grab
+123, 1 (2 on hit, tight)
+!! *MOMENTARY TD* (wall behind)UB123
+**1**
+**2**
+**13**
+123
+!!*BT*
+1
+D1
+2
+2,13 onhit
+D2
+U2
+23
+13
+UF123 jump (*B*) *ROCKET*
+opponent down
+DF2
+U1
+j.1
+DF12
+DF13 many throw variations
+throws
+13
+F13
+HCB13
+B13
+BF13
+BB13 (*B*) *ROCKET*
+HCF13
+UF13
+at wall
+FB13
+FF13
+at half wall
+F13
+many down dir crouch throws
+</p>
+    
+  </section>
+  <footer class="entry-footer"><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" style="user-select: text;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" style="user-select: text;"></rect><line x1="16" y1="2" x2="16" y2="6" style="user-select: text;"></line><line x1="8" y1="2" x2="8" y2="6" style="user-select: text;"></line><line x1="3" y1="10" x2="21" y2="10" style="user-select: text;"></line></svg>
+  <span>November 15, 2024</span></span><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon" style="user-select: text;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" style="user-select: text;"></path><line x1="7" y1="7" x2="7" y2="7" style="user-select: text;"></line></svg>
+  <span class="post-tags"><a href="//localhost:1313/tags/virtua-fighter/">Virtua Fighter</a></span></span>
+</footer>
+  <a class="entry-link" aria-label="post link to VF5-ElBlaze" href="//localhost:1313/charts/vf5-elblaze/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>VF5-Sarah
+    </h2>
+  </header>
+  <section class="entry-content">
+    
+      <p>Cond
+1,1,1(F) FSLIDE
+1,1,1,2
+1,1,1,U2 FLAMINGO
+1,1,1,B2
+1,1,2
+1,2
+1,B2
+F1,1(F) FSLIDE
+F1,B2 FLAMINGO
+B1,2,B2
+B1,2,23
+D1
+DF1,2 FLAMINGO
+2,1(F) FSLIDE
+wr2,2 ( delay 2nd)
+F2,1(F) FSLIDE
+F2,2
+B2 FLAMINGO
+D2 long llow
+DB2 launcher
+U2 FLAMINGO UB2 hitbox
+F12,DF1,2
+B12 FLAMINGO
+D12,2 launcher
+DF12 beats jabs?
+23,2 FLAMINGO
+FF23
+DF23 snake edge
+DB23,2 FLAMINGO UF23,1,1,2
+UF23,2,2
+UF123 big jump
+!! FLAMINGO 1,1,1,U2, F1,B2, DF1,2, B2, U2, B12, 23,2 DB23,2
+1,D2 (2 on hit, another 2 on hit)
+2,2,2,2
+2,2,D2,2(123) STEP
+F2,2
+B2
+D2 (13 on hit for grab)
+DF2 crumple
+DB2,2(123) STEP lowhigh
+U/D12 sidesteps into kick
+23,2 launch
+F23 big launch
+D23 snake edge
+!! FORWARD SLIDE F123 1,1,1F, F1,1F, 2,1F, F2,1F, 1,1(F) FSLIDE
+1,1,2
+2
+D2 low
+D2,2 (13 on guard/hit for grab) mix
+12 get rotated
+23 buttslam
+B deflect
+1
+2
+D2
+12
+23**
+...</p>
+    
+  </section>
+  <footer class="entry-footer"><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" style="user-select: text;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" style="user-select: text;"></rect><line x1="16" y1="2" x2="16" y2="6" style="user-select: text;"></line><line x1="8" y1="2" x2="8" y2="6" style="user-select: text;"></line><line x1="3" y1="10" x2="21" y2="10" style="user-select: text;"></line></svg>
+  <span>November 15, 2024</span></span><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon" style="user-select: text;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" style="user-select: text;"></path><line x1="7" y1="7" x2="7" y2="7" style="user-select: text;"></line></svg>
+  <span class="post-tags"><a href="//localhost:1313/tags/virtua-fighter/">Virtua Fighter</a></span></span>
+</footer>
+  <a class="entry-link" aria-label="post link to VF5-Sarah" href="//localhost:1313/charts/vf5-sarah/"></a>
+</article>
+    </main>
+    
+<footer class="footer">
+  <span>&copy; 2024 <a href="//localhost:1313/">RVDE</a></span><span style="display: inline-block; margin-left: 1em;">
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+  </span>
+  <span style="display: inline-block; margin-left: 1em;">
+    Powered by
+    <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+    <a href="https://github.com/reorx/hugo-PaperModX/" rel="noopener" target="_blank">PaperModX</a>
+  </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+    <path d="M12 6H0l6-6z" />
+  </svg>
+</a>
+
+<script>
+  (function() {
+     
+    const disableThemeToggle = '' == '1';
+    if (disableThemeToggle) {
+      return;
+    }
+
+    let button = document.getElementById("theme-toggle")
+    
+    button.removeEventListener('click', toggleThemeListener)
+    
+    button.addEventListener('click', toggleThemeListener)
+  })();
+</script>
+
+<script>
+  (function () {
+    let menu = document.getElementById('menu')
+    if (menu) {
+      menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+      menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+      }
+    }
+
+    const disableSmoothScroll = '' == '1';
+    const enableInstantClick = '' == '1';
+    
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || disableSmoothScroll || enableInstantClick) {
+      return;
+    }
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        var id = this.getAttribute("href").substr(1);
+        document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+          behavior: "smooth"
+        });
+        if (id === "top") {
+          history.replaceState(null, null, " ");
+        } else {
+          history.pushState(null, null, `#${id}`);
+        }
+      });
+    });
+  })();
+</script>
+<script>
+  var mybutton = document.getElementById("top-link");
+  window.onscroll = function () {
+    if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+      mybutton.style.visibility = "visible";
+      mybutton.style.opacity = "1";
+    } else {
+      mybutton.style.visibility = "hidden";
+      mybutton.style.opacity = "0";
+    }
+  };
+</script>
+<script>
+  if (window.scrollListeners) {
+    
+    for (const listener of scrollListeners) {
+      window.removeEventListener('scroll', listener)
+    }
+  }
+  window.scrollListeners = []
+</script>
+
+
+
+<script src="/js/medium-zoom.min.js" data-no-instant
+></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/simplelightbox@2.4.0/dist/simple-lightbox.min.js"></script>
+<script src="/js/masonry.pkgd.min.js"></script>
+<script src="/js/chromatic-aberration.js"></script>
+<script src="/js/dyna-panels.js"></script>
+
+</body>
+
+</html>

@@ -27,5 +27,25 @@
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
+    <item>
+      <title>Tekken 8</title>
+      <link>//localhost:1313/tags/tekken-8/</link>
+      <pubDate>Fri, 15 Nov 2024 14:01:57 +0200</pubDate>
+      
+      <guid>//localhost:1313/tags/tekken-8/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Virtua Fighter 5</title>
+      <link>//localhost:1313/tags/virtua-fighter-5/</link>
+      <pubDate>Fri, 15 Nov 2024 14:01:57 +0200</pubDate>
+      
+      <guid>//localhost:1313/tags/virtua-fighter-5/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
   </channel>
 </rss>
