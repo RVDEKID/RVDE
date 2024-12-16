@@ -8,6 +8,16 @@ p {
     width: 90vw !important;
     padding: 0;
 }
+.type-charts strong{
+    
+    color: rgb(233, 125, 23);
+}
+.type-charts em{
+    color:rgb(126, 45, 219);
+    font-weight: 600;
+}
+
+
 .horizontal-line{
     width: 100%;
     height: 2px;

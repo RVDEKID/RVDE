@@ -2,7 +2,6 @@
 date: '2024-11-15T14:01:57+02:00'
 draft: false
 title: 'test'
-tags: ["html", "css"]
 categories: ["tech"]
 ---
 

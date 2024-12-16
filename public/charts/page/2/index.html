@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+<script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><link rel="stylesheet" href="/css/custom.css?v=1.0" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplelightbox@2.4.0/dist/simple-lightbox.min.css">
+
+<link rel="stylesheet" href="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.min.css">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Charts | RVDE</title>
+<meta name="keywords" content="">
+<meta name="description" content="Charts - RVDE">
+<meta name="author" content="">
+<link rel="canonical" href="//localhost:1313/charts/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.cd0c10bc3cbe679e2e41b40a4edfe5a6f5e2a27e696a2b7f0aa7e1b9874ad556.css" integrity="sha256-zQwQvDy&#43;Z54uQbQKTt/lpvXion5pait/CqfhuYdK1VY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="//localhost:1313/favicon.ico">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" href="//localhost:1313/charts/index.xml">
+<link rel="alternate" hreflang="en" href="//localhost:1313/charts/">
+
+<meta name="twitter:title" content="Charts | RVDE" />
+<meta name="twitter:description" content="" />
+<meta property="og:title" content="Charts | RVDE" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="//localhost:1313/charts/" />
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Charts",
+      "item": "//localhost:1313/charts/"
+    }
+  ]
+}
+</script>
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+
+</head>
+
+<body class="list-page dark type-charts kind-section layout-" id="top"><script data-no-instant>
+    function switchTheme(theme) {
+      switch (theme) {
+        case 'light':
+          document.body.classList.remove('dark');
+          break;
+        case 'dark':
+          document.body.classList.add('dark');
+          break;
+        
+        default:
+          if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.classList.add('dark');
+          }
+      }
+    }
+    
+    function isDarkTheme() {
+      return document.body.className.includes("dark");
+    }
+    
+    function getPrefTheme() {
+      return localStorage.getItem("pref-theme");
+    }
+    
+    function setPrefTheme(theme) {
+      switchTheme(theme)
+      localStorage.setItem("pref-theme", theme);
+    }
+    
+    const toggleThemeCallbacks = {}
+    toggleThemeCallbacks['main'] = (isDark) => {
+      
+      if (isDark) {
+        setPrefTheme('light');
+      } else {
+        setPrefTheme('dark');
+      }
+    }
+    
+    
+    
+    
+    window.addEventListener('toggle-theme', function() {
+      
+      const isDark = isDarkTheme()
+      for (const key in toggleThemeCallbacks) {
+        toggleThemeCallbacks[key](isDark)
+      }
+    });
+    
+    
+    function toggleThemeListener() {
+      
+      window.dispatchEvent(new CustomEvent('toggle-theme'));
+    }
+    
+    </script>
+    <script>
+      
+      (function() {
+        const defaultTheme = 'dark';
+        const prefTheme = getPrefTheme();
+        const theme = prefTheme ? prefTheme : defaultTheme;
+    
+        switchTheme(theme);
+      })();
+    </script>
+    
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <button class="chromatic-aberration home-button" onclick="navigateTo('home')" accesskey="h" title="RVDE (Alt + H)">
+                  RVDE
+                </button></a>
+                <span class="logo-switches">
+                    <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </span>
+            </div>
+            <ul id="menu">
+              <li>
+                  <button onclick="navigateTo('portfolio')" title="PORTFOLIO">
+                      PORTFOLIO
+                  </button>
+              </li>
+              <li>
+                  <button onclick="navigateTo('art')" title="ART">
+                      ART
+                  </button>
+              </li>
+              <li>
+                  <button onclick="navigateTo('cv')" title="CV">
+                      CV
+                  </button>
+              </li>
+          </ul>
+        </nav>
+    </header>
+    <main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="//localhost:1313/">Home</a></div>
+  <h1>
+    Charts</h1><div class="inline-links">
+  
+  
+  <span><a href="//localhost:1313/charts/index.xml" target="_blank">RSS</a></span></div>
+</header>
+
+
+
+
+
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>T8-Lee
+    </h2>
+  </header>
+  <section class="entry-content">
+    
+      <p>moves cond
+UF12throw&gt; DB34
+launch&gt; 4,U3, B2F, F4,1!, DF3,2,3
+Launch&gt; 4,U3, B2F loop until wall in sight &gt; F2,1 to wall, F4,1&gt; DF3,2,3
+! stuff for heat
+1,2,4! 3
+1,3,_ ,3!,3! 1
+3:3&gt;4
+4,4,4! 2 F3,3,3,3,3,4 4
+F4,1 5
+B1,1!,2 6
+B1,12! 7
+F&gt;F2 8
+move hits start bloc notes 1,2(F) hh 10 -3/-2 hold F for MIST STEP (can spam 1,2F1,2F1,2F) 1,2,2,3 hhmh 10 -3/-9 &gt;4 for HITMAN but its not great 1,2,4!,(3)* hhm 10 -12/-14 3 for HM. PI!4 (1,2,1,4 to get timing) 2,1,3/4/1/34 hhh/l/m 10 -12 3 high,4 low, 1 not natural, crouches. 34 cancels to HM 2,2,3 hmh 10 -3/ -9 not natural, 4 for HITMAN 3,4/3 mh 14 -8/-9 dont mash! they both hit. 3:3&gt;on hit 4! grabs, 4 HM 4,3,3 hhm 11 -13 not natural, big on counter 4,3,4 hhm 11 -9 SCREW 38, bigger on counter than 4,4,4! hhh 11 -2/-9 ! input on last is HEAT, timing is 4,4,_ ,4 (i press 4434)
+4,U3,(F) hm 11 -1 F for MS F2,1 mh 14 -10 -10 but reaches far and knocks far on block. F3,3,3,3,3,4! mmmhhhh 15 -9 SCREW 27, fun, more a launcher than combo screw F4,1! hh 11 -5/&#43;5 SCREW33, easy easy perfect input for &#43;5 F4,3,(4) hm 11 -8/-4 mid mix for^ 4 for HM **DF3,2,**3 mhm 15 -16 not natural to finish, DF3,2 is safe and good combo fill DF4,4 mh 13 -9 HEAT, DF4,3 for HM D3(4) l 16 4 for HM D4n4 lh 12 -9 after this u can do any string that starts w 4 D4,4,4,4,(3) lllm 12 -20/-11 not awesome but its a low spam DB34 l 21 big oki on counter B1,1!,2 hmh 14 -11/-6! B1,1,34 HM, B1,1F to cancel to MS B1,12! hh 14 -6 ^but skips second hit B2,4,3 hhh 14 0 B2,4 for HM B3,3 lh 15 -1onhit F for MS B4 (3) m 20 -3 3 for HM, best keepout tool, huge CH B34 h 20 -9 ARMOR HEAT duckable UF4 m 15 -13 his 15f launch but not as safe UF34(34) m 22 &#43;5 big leaping kick w &#43; frames, for oki? 34 for HM F&gt;F2(F) h 20 &#43;2/&#43;5 SCREW , press 2 at the same time as second F for ! FF3 m 14 -9 HEAT D&gt;DB4 m 22 -17 huge launch (screw) BB4,(3) h 19 &#43;2/&#43;5 homing, 3 for HM FFF3,4(3) mh 14 &#43;3/&#43;6 4 for HM F34 m 30 &#43;4 slow as shit, forces crouch at &#43;4 tho wr1,2 mh 13 -7 wr1 for HM, wr1,2F for MS wr1,4 mh 13 -5 lil better, wr1 for HM, wr1,4,3 for HM wr2,3 mm 14 -13 SCREW32 wr2,4 mh 14 -2 biggestdmg wr3,3&gt;D3,D3spam mm&gt;lhlhlh wr33 into lowhigh spam, let go of D for mhmh spam instead (c)DF4 l 16 low, 3 for HM (c)DF&gt;D&gt;DF3! l slide !MS F&gt;n 1,2F, 4,U3F, B1,1F, B3,3F, wr1,2F 3,4 mm 15 -13 launch 34 l 25 slide ! HM 34 1,2,4!,3, 2,1,34, F4,3,4, 3,4
+DF4,3, D3,4, B1,1,34, B2,4, UF34,34, BB4,3 1,1,1 h 12 &#43;2/-2/-7 1F/ 1,1F for MS 1,4 hm 12 -8 3 after for HM 3 m 18 -3 homing ARMOR grabs on front hit 4 l 22 U3 m 20 -9 HEAT 2 m 19 -13 launch (screw) moves ! stuff for heat 1,2,4! 1,3,_ ,3!,3! 3:3&gt;4 4,4,4! F3,3,3,3,3,4 F4,1 B1,1!,2 B1,12!
+...</p>
+    
+  </section>
+  <footer class="entry-footer"><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" style="user-select: text;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" style="user-select: text;"></rect><line x1="16" y1="2" x2="16" y2="6" style="user-select: text;"></line><line x1="8" y1="2" x2="8" y2="6" style="user-select: text;"></line><line x1="3" y1="10" x2="21" y2="10" style="user-select: text;"></line></svg>
+  <span>November 15, 2024</span></span><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon" style="user-select: text;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" style="user-select: text;"></path><line x1="7" y1="7" x2="7" y2="7" style="user-select: text;"></line></svg>
+  <span class="post-tags"><a href="//localhost:1313/tags/tekken-8/">Tekken 8</a></span></span>
+</footer>
+  <a class="entry-link" aria-label="post link to T8-Lee" href="//localhost:1313/charts/t8-lee/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>T8-Leroy
+    </h2>
+  </header>
+  <section class="entry-content">
+    
+      <p> move hits start block notes 1,1,12,1 hmhhm 10 -16 only for CH/punish? only first hit hits nat 1,2 hh 10 -3 1,2,!1! hhh 10 -6 third hit not nat but has reversal 1,2,3 hhh 10 -6 last hit not nat but safe 1,2,4 her hhm 10 -9 natural jabstring into HER at &#43;3 2,2 hh 12 -7 natural into &#43;7, on block DB4 to highcrush the jab and counter (or DB3&gt;12) (or delay DF34 screw) 2,1,2,1 hmhm 12 -13 third hit has reversal, last hit SCREW but makes it unsafe 3,3 ml 15 mid low pretty long, &#43;2 on hit 4,4 hm 12 -13 not safe but very fast for its range 12,12,1 hhm 14 -17 last hit only if first two hit, HEAT, buffed in heat F2,3,4 her hmm 14 -9 -9 into HER F3,12,4 mhhm 14 -16 string into SCREW, buffed in heat, combo tool F4,4 mh 14 -6 huuge range natural string into HEAT F12 m 17 -13 ARMOR DF1,4 her mm 13 -9 midstring into HER at &#43;3 DF1,12,2 mhhhm 13 -10 reversal on third, not natural, its aight DF2,12 mhm 15 -18 launch, v unsafe DF3,1,12 mhm 16 -13 last hit v unsafe but wallsplats, DF3,1 on block is 0 DF4,3 mm 13 -9 DF4 alone goes HER with &#43;6 / -6 DF34 h 18 -9 big screw, safe, F3,12,4&gt; B34 after for example D1,2,4 slow 10 -9 super close range dickjab string into HER D2,4 ll 15 m,eh lows D3,2 her lh 16 lowhigh into HER at &#43;8 D4,4 lm 14 -11 lowmid string into HER but its not natural so youll be at -11 usually D12 m 17 -4 HEAT good ass keepaway tool DB1,2 mm 16 -12 SCREW whiff punisher, since it approaches a lot DB1,3 mh 16 0 safe, on hit leaves u &#43;8, GRAB after DB1,12 mm 16 -10 a slightly stronger safer mid than db1,2 but not natural DB3 her l 20 goes HER with &#43;5, on CH &#43;14 and 12,1 guaranteed DB4 l 17 ch crumple but youre in crouch also DB12 m 32 -11 big ol reversal parry into HEAT B1 h 13 -6 safe wannabe steve B1, on CH cinematic 45 dmg B3 her h 22 &#43;9 HER from homing slow high with &#43;16, &#43;9 on block. on hit 12,1 guaranteed B4 m 17 -9 homing big range B12 m 12 -10 CH only, do after you confirm any hit, might give u a crumple B34 combo only, cinematic kick throw UB2 m 20 -10 punch parry hit, tricky to time UF1 h 16 -9 has a strong parry, harder to time than B2 but is an attack UF2 m 24 &#43;1 chip, &#43;, slow uf3 jumping kick, safe uf4 orbital, safe UF34,12 -13 the best move, picks up from ground,loops at wall, my fave FF2,2 mm 14 -15 whiff punish, crumples on hit ff3 -2 flip kick forward, safe FF4, 2 her 16f long mid screw, just FF4 goes to HER QCF2 h 16 -6 safe launcher wr1,4 her 13f her wr2 15f crumple wr4 11f cDF4,1 lm 15 lowmid launch from crouch ss4 l ss12 downed DB2,12 F23 massive cane whiffpunish DB23 massive lowstart cane screw !! HERMIT 34 1,2,4, F2,3,4, DF1,4, DF4, D3,2, DB3, B3, FF4, wr1,4 1 m 24 -10 parry hit 2,3 hh 12 -9 safe SCREW 3,4 lm 16 natural 4,12 mmm 11 -14 SCREW also guaranteed from a lot of transitions on hit 12,1 mm 14 -17 only do last hit if 12 hits, HGEAT F1 h 14 0 safe, wall splat, looks interesting F4 m 0 safe supa orbital B1 m 20 &#43;4 overhead hammer hit, &#43;4, launches on ch (B3&gt; B1 big oppression) B3,12 lm 20 huge low trip into knock B4 l 20 snake edge on ch ss </p>
+    
+  </section>
+  <footer class="entry-footer"><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" style="user-select: text;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" style="user-select: text;"></rect><line x1="16" y1="2" x2="16" y2="6" style="user-select: text;"></line><line x1="8" y1="2" x2="8" y2="6" style="user-select: text;"></line><line x1="3" y1="10" x2="21" y2="10" style="user-select: text;"></line></svg>
+  <span>November 15, 2024</span></span><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon" style="user-select: text;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" style="user-select: text;"></path><line x1="7" y1="7" x2="7" y2="7" style="user-select: text;"></line></svg>
+  <span class="post-tags"><a href="//localhost:1313/tags/tekken-8/">Tekken 8</a></span></span>
+</footer>
+  <a class="entry-link" aria-label="post link to T8-Leroy" href="//localhost:1313/charts/t8-leroy/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>T8-Lidia
+    </h2>
+  </header>
+  <section class="entry-content">
+    
+      <p>3,2, DF2, cs2,2,(dash) FF4,3 59dmg
+UF4, F, 2, B2,3, FF4,3 63
+FF3, B4, D3,1,2, (dash) QCF2,2,12 64dmg
+FF3, B2,3, DF2, 2,2, dash FF4,3 68dmg
+(heat)
+3,2, DF2, 3F, B2,3, DF4,2, FF4,3 62dmg
+FF3, B2,3, DF2, 3F, B2,3, DF4,2, FF4,3 70dmg
+Strings
+heat
+2,2, 4, 12, 1
+cs, 4, 1/4, heat 1/12
+ff2&gt;1/2
+Moves Cond move hits start bloxk notes 1,2,2 h.h.m CAT STANCE 1,2,4 h,h,l -13 2,2 h,h 11f CAT STANCE 3,2 h,h 15f SCREW, just input on 2 (CH)4,3 h,m 13f -14 big knock on hit 12 (heat buffs) m 31f -9 holdable, chip &#43;7 on block when held 34 m,m 20f 0 CAT STANCE F3,4 m,h 17f &#43;1 chip, F3&gt;QCF4 to power up F4,3,4 m,m,m 17f -10 SCREW F12,3,12 mhmmm 14f -15 HEAT DF2 (ch fish) m 15f 0 CAT STANCE, guaranteed follow 3 on CH DF4,2 m,h 15f -8 SCREW DF4:3 slow h 20f &#43;8 chip D2 l 18f crouches D3,1,2 only as screw l,h,h 15f -6 SCREW not natural DB3 l 16f HORSE STANCE homing, throw on CH DB34 m 22f -3 Low parry, press 1 just frame B1 m 18f &#43;2 HEAT Chip B3,1 m,m 17f -11 B12 m 20 -13 ARMOR B14 UNBLOCK 60 guaranteed? from charged 12 UF1 m 23f -6 high parry, cat stance on parry UF3 m 25f -9 hits ground UF4 mh 15f -5 SCREW CAT STANCE FF2/FFF2 m 13f &#43;5 HORSE STANCE FF3 m 19f -14 SCREW FF4,3 m,m 18f -27 cinematic finish in combos, based on heaven and earth lvl FFF1 h 13f &#43;6f SCREW, H&amp;E in heat FFF3 m 23f &#43;6 chip QCF2,2,12 mmm 16f -17f QCFQCF2,2&gt; BF&gt;F12 to power up?? big dmg QCF12,2 m,m 16f -6 STALKING WOLF wr1,2 mh 13f 0 CAT STANCE wr2 m 15f -12 SCREW launch (c)DF2 m 12f -14 HEAT ss2 m 18f 0 forces crouch HORSE STANCE F34, DB3, FF2 1 h 17f &#43;1 ARMOR homing, STALKING WOLF 2 m 16f -10 hitthrow into HEAT and H&amp;E 4 m 28f &#43;8 chip, STALKING WOLF CAT STANCE B34,122, 22, 3&#43;4, DF2, UF4,
+wr1,2, 1 m 17f -8 knocks far 2,2 just screw h,m 14f -10 screw just input 3 h 13f -4 HEAT 4,34 l,m 19f -14 just do 4 to go to STALKING WOLF 12 m 16f screw STALKING WOLF STALKING WOLF stance&gt;F
+QCF12,2
+HS1/4
+CS4/1&#43;2 1 m 24f &#43;2 SCREW , holdable, BB/FF to cancel, H&amp;E in heat 2 m 15f 4 l,m 20f HEAVEN AND EARTH (heat)stance&gt;U
+FFF1, HS2
+SW1 1 m 18f ARMOR, LAUNCH, power up based on state 2 m 20f knocks mega far 12 UNBLOCK 16f ARMOR, kills heat Moves full 1,2 h,h 10f 1,2,2 h.h.m CAT STANCE 1,2,3 h.h.h 1,2,4 h,h,l -13 1,4 h,h 2,2 h,h 11f CAT STANCE 2,4 h,m 3,2 h,h 15f SCREW, just input on 2 4,3 h,m 13f -14 big knock on hit 12 m 31f -9 holdable, chip &#43;7 on block when held 12(heat) m HEAVEN AND EARTH, REVERSAL BREAK 34 m,m 20f 0 CAT STANCE F2,4 h,h 12 -13 F3,4 m,h 17f &#43;1 chip, F3&gt;QCF4 to power up F4,3,1 m,m,m 17f -12 last hit unsafe F4,3,4 m,m,m -10 SCREW F12,3,12 mhmmm 14f -15 HEAT F34 HORSE STANCE DF1,2 m,h 13f -4 DF1,3 m,m -13 DF2 m 15f 0 CAT STANCE, guaranteed follow on CH DF3,4 m,m 14f -12 2nd hit not guaranteed DF4,2 m,h 15f -8 SCREW DF4:3 h 20f &#43;8 chip DF4:4 h 12f &#43;6 DF34 m 22f -9 HOMING D1 m 19f -7 D2 l 18f D3,1,2 l,h,h 15f -6 SCREW not natural DB2 m 16f -7 DB3 l 16f HORSE STANCE homing, throw on CH DB4 l 22f DB34 m 22f -3 Low parry, press 1 just frame B1 m 18f &#43;2 HEAT Chip B2,3 h,m 13f -10 Just input B3,1 m,m 17f -11 B3,4,12 m,h,m -15 B3,4,QCF12, big dmg B4 h 16f homing B12 m 20 -13 ARMOR B34 CAT STANCE B14 UNBLOCK 60 guaranteed? from charged 12 UF1 m 23f -6 high parry, cat stance on parry UF3 m 25f -9 hits ground UF4 mh 15f -5 SCREW CAT STANCE FF2/FFF2 m 13f &#43;5 HORSE STANCE FF3 m 19f -14 SCREW FF4,3 m,m 18f -27 cinematic finish in combos, based on heaven and earth lvl FF12 m 15f -13 clean hit FFF1 h 13f &#43;6f SCREW, H&amp;E in heat FFF3 m 23f &#43;6 chip QCF2,2,12 mmm 16f -17f QCFQCF2,2&gt; BF&gt;F12 to power up?? QCF4 h homing QCF12,2 m,m 16f -6 STALKING WOLF wr1,2 mh 13f 0 CAT STANCE wr1,4 mm -13 wr2 m 15f -12 SCREW launch wr3 m 14f -12 SCREW wr4,2 m,h 11f 0 CAT STANCE (c)DF2 m 12f -14 HEAT (c)DF3 l 20f clean hit ss2 m 18f 0 forces crouch ss4 h 16f (downed)D12 power up based on H&amp;E HORSE STANCE F34 1 h 17f ARMOR homing, STALKING WOLF 2 m 16f hitthrow into HEAT and H&amp;E 3 m 22f homing 4 m 28f chip, STALKING WOLF 12 l 20f lame low F STALKING WOLF U (heat) H&amp;E, strong parry (all stances) BB hops back (all stances) CAT STANCE B34 1 m 17f -8 knocks far 2,2 h,m 14f -10 screw just input 2,3,1 h,m,m 14f -10 3 h 13f -4 HEAT 4,34 l,m 19f just do 4 to go to STALKING WOLF 12 m 16f screw STALKING WOLF F STALKING WOLF STALKING WOLF stance&gt;F 1 m 24f SCREW , holdable, BB/FF to cancel, H&amp;E in heat 2 m 15f 3,1 m,m 17f -6 last hit not guaranteed 4 l,m 20f HEAVEN AND EARTH (heat)stance&gt;U 1 m 18f ARMOR, LAUNCH, power up based on state 2 m 20f knocks mega far 12 UNBLOCK 16f ARMOR, kills heat </p>
+    
+  </section>
+  <footer class="entry-footer"><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" style="user-select: text;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" style="user-select: text;"></rect><line x1="16" y1="2" x2="16" y2="6" style="user-select: text;"></line><line x1="8" y1="2" x2="8" y2="6" style="user-select: text;"></line><line x1="3" y1="10" x2="21" y2="10" style="user-select: text;"></line></svg>
+  <span>November 15, 2024</span></span><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon" style="user-select: text;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" style="user-select: text;"></path><line x1="7" y1="7" x2="7" y2="7" style="user-select: text;"></line></svg>
+  <span class="post-tags"><a href="//localhost:1313/tags/tekken-8/">Tekken 8</a></span></span>
+</footer>
+  <a class="entry-link" aria-label="post link to T8-Lidia" href="//localhost:1313/charts/t8-lidia/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>T8-Lili
+    </h2>
+  </header>
+  <section class="entry-content">
+    
+      <p>1,1,(BT)D34, D3,4,(microdash)DB4(dash)U3,3F, 1,4
+HEAT 1,1,(BT)D34, D3,4,(microdash)DB4(dash)U3,3F, 2,1F(heatdash)3,2F&gt;1,4
+HEAT AND SUPER 1,1,(BT)D34, D3,4,(microdash)DB4(dash)U3,3F, 2,1F(heatdash)SUPER
+DF34&gt;3,4, 1, D2,2,4, FF3F1,4
+LAUNCH&gt; 4, 3,2F&gt;3, U3,3F&gt;1,4
+DB3, B1F&gt;3, FF34
+FF2, D1,2B&gt;1,2, FF3F&gt; 1,4
+Moves Condensed move hits start block note 1,1 hhm 10 -6/ 1,1 goes to BT 1,2 hh 10 -3 much better jabstring, good fast n safe 1,2,3 hhl 10 ^good string into a slow-ish low, -2 on hit 1,2,4 hhm 10 -9 1,2 into frametrap 2,3 hl 10 1,2,3 but without first 1, just as alright 2,4 hh 10 -2 knocks down on hit, u can mini step and do DB4 to sweep em for oki 3,1 mm 15 -13 GOOD REACH, into heat, pretty good poke 3,2,3 mhh 15 -9 3,2F goes to DEW (combo filler?), wall finisher 12 m 12-13 -12 quick real beefy PUNISH 34 hh 23 -2 need range to do, but goes to HEAT, its aight at best F2,3 hm 12 -15! ok, launchable. (from launch this to 3,2F works, test later) F4 m 17 -9 NASTY range, SCREW31, good keepout move F12 m 14 -7 forces crouch, meh? DF3 m 20 &#43;3! needs conditioning but &#43;3! , crumples on counter DF4,4 ml 13 mid low, -2 even on hit so its just a bully move, not a good starter DF34(34) m 24 -4 backflip, BT, 1,2 after for screw, D2 after on block tho D1,2,(4) lhm 18 -8(-12) just dont do the last hit ever, hold B at the end for BT D2,2,4 mhm 16 -17 SCREW40, -17 but hits enemy pretty far, use at ur own discretion i guess D3 l 19 approaching quick lil low, &#43;1 on hit D12 m 20 -13 ARMOR D34 m 17 -21! big ol launch DB4 l 30! SNAKE EDGE DB34 l 24 long slidey low B1,4 mm 17 -11 SCREW37, B1F for DEW U3,3,34 mm 22 -8 U3,3F,3 does first two hits into DEW and screws, 2x that not bad dmg U34 m 36 -5 jump on they shouldas, F4 after UF3 m 15 -13 launch UF34,3 hh 15 -4 pretty cool, &#43;14 on hit UF34,34 hm 15 -21 not natural, but big launch/ SCREW FF2 m 16 -13 huge crumple on hit, good FF3,34 mm 22 -8 FF3F for DEW FF3F&gt;34 PLUS SIX bro FF4 l 22 low ff34 m 19 -2 buffed in heat wr1,2,4 mhl 13 great wr2 launch BACKTURN B34, 1,1 DF34 D1,2B B2,1B 1,2 hm 8! -13 SCREW ,1 is just 8 frames and leaves bt 1,4 hh 8! -5 HEAT , rly good D2 l 16 good low D34 l 20 SNAKE EDGE 2 m 14 -13 armor 3,4 mm 14 -12 ok DEW GLIDE QCF, 3,2F, B1F, B2,1F, U3,3F, FF3F 2,1 mm 14 -13 HEAT 3 m 17 -11 SCREW 12 m 16 -11 ARMOR, SCREW 34 hh 13 &#43;6 &#43;6!, 3,2F&gt;34 for free &#43; frames B3/B4 hops 2 m 20 -9 HEAT 3 l 20 low Moves Full move hits start block note 1,1,(3) hhm 10 -6/(-15) 1,1 goes to BT, 3 isnt natural and is -15 on block, just dont press it 1,2 hh 10 -3 much better jabstring, good fast n safe 1,2,3 hhl 10 ^good string into a slow-ish low, good to throw in sometimes 1,2,4 hhm 10 -9 third hit is so slow this gets interrupted on block, on hit counters 2,3 hl 10 1,2,3 but without first 1, just as alright 2,4 hh 10 -2 knocks down on hit, u can mini step and do DB4 to sweep em for oki 3,1 mm 15 -13 GOOD REACH, into heat, pretty good poke 3,2,3 mhh 15 -9 3,2F goes to DEW (combo filler?), wall finisher 12 m 12-13 -12 quick real beefy PUNISH 34 hh 23 -2 need range to do, but goes to HEAT, its aight at best F2,3 hm 12 -15! ok, launchable. (from launch this to 3,2F works, test later) F3 m 20 -3 HOMING, slow, safe F4 m 17 -9 NASTY range, SCREW31, good keepout move F12 m 14 -7 forces crouch, meh? F34 mm 18 -9 slow but aight F34,3,4 mmm 18 -20! pretty horrible on block, also slow DF3 m 20 &#43;3! needs conditioning but &#43;3! , crumples on counter DF4,4 ml 13 mid low, -2 even on hit so its just a bully move, not a good starter DF34(34) m 24 -4 backflip, BT, (34 after for more damage but no combo) D1,2,(4) lhm 18 -8(-12) just dont do the last hit ever, hold B at the end for BT D2,2,3 meh D2,2,4 mhm 16 -17 SCREW40, -17 but hits enemy pretty far, use at ur own discretion i guess D3 l 19 approaching quick lil low, &#43;1 on hit D12 m 20 -13 ARMOR D34 m 17 -21! big ol launch DB3 meh DB4 l 30! SNAKE EDGE DB34 l 24 long slidey low B1,4 mm 17 -11 SCREW37, B1F for DEW B2,1,12 hm 13 -12 meh, not natural but B2,1B for BT, B2,1F for DEW B12 m 23 -12 big evade punish, mediocre UB1 m 17 -9 meh U3,3,34 mm 22 -8 U3,3F,3 does first two hits into DEW and screws, 2x that not bad dmg U34 m 36 -5 jump on they shouldas, F4 after UF2 m 20 -10 sidestepping hit, alright UF3 m 15 -13 launch UF4,3 mm 25 -9 hopping screw but idk its not great UF34,3 hh 15 -4 pretty cool, &#43;14 on hit UF34,34 hm 15 -21 not natural, but big launch/ SCREW FF2 m 16 -13 huge crumple on hit, good FF3,34 mm 22 -8 FF3F for DEW FF4 l 22 ff12(hold) charge unblock, slow ff34 m 19 -2 buffed in heat wr1,2,4 mhl 13 great wr2 launch wr3,4 wr4 BACKTURN B34, 1,1 DF34 D1,2B B2,1B 1,2 hm 8! -13 SCREW ,1 is just 8 frames and leaves bt 1,4 hh 8! -5 HEAT , rly good 2 m 14 -13 armor 3,4 mm 14 -12 ok 4,34 meh 12 meh 34 D2 l 16 good low D3,4 lm 17 -13 not natural but a good counter hit low D4 l 14 faster worse low D34 l 20 SNAKE EDGE DEW GLIDE QCF, 3,2F, B1F, B2,1F, U3,3F, FF3F 1,2 mm 15 -14 1,4 mm 15 -9 not natural, powered up in heat tho 2,1 mm 14 -13 HEAT 3 m 17 -11 SCREW 12 m 16 -11 ARMOR, SCREW 34 hh 13 &#43;6 &#43;6!, 3,2F&gt;34 for free &#43; frames B3/B4 hops 2 m 20 -9 HEAT 3 l 20 low 4 m 23&#43; -2 slow </p>
+    
+  </section>
+  <footer class="entry-footer"><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" style="user-select: text;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" style="user-select: text;"></rect><line x1="16" y1="2" x2="16" y2="6" style="user-select: text;"></line><line x1="8" y1="2" x2="8" y2="6" style="user-select: text;"></line><line x1="3" y1="10" x2="21" y2="10" style="user-select: text;"></line></svg>
+  <span>November 15, 2024</span></span><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon" style="user-select: text;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" style="user-select: text;"></path><line x1="7" y1="7" x2="7" y2="7" style="user-select: text;"></line></svg>
+  <span class="post-tags"><a href="//localhost:1313/tags/tekken-8/">Tekken 8</a></span></span>
+</footer>
+  <a class="entry-link" aria-label="post link to T8-Lili" href="//localhost:1313/charts/t8-lili/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>T8-Reina
+    </h2>
+  </header>
+  <section class="entry-content">
+    
+      <p>moves conds heat 3,4,4, 34,4,4, F34,4
+move hits start block notes 1,1,2 hhm 10 -17 shifts to SENTAI on hit if u dont hold B. natural 1,2 hh 10 -3 1,2,2 hhh 10 -14 1,2,3,4 hhmh 10 -4 last 2 not natural, safe but duckable 2,2,1 hhm 12 -14 natural, unsafe 2,2,2,1 hhmm 12 -15 SCREW34, not natural ofc 2,2,2,2(or&gt;QCF2) hhmm 12 -14 2 extra damage from qcf, not huge. seems confirmable 2:1 mm 11 -14 12 m 12 -10 34,4 mmm 18 -14 if u just do 34 its -8, on hit &#43;3 in crouching. forces crouch also F2,3 hm 13 -9/-2 F2,3F for SENTAI, F2D/U for KOU F4 m 19 &#43;2 forces crouch, hachi F4 F12 m 32 -11 or 12 during KOU, kuperkeikka F12,3 l 22 bad low, biggg throw on CH F12&gt;UF3 m 30 &#43;6 kuperkeikka jumping kick, &#43;6 slow as hell F12&gt;UF4(D) h 32 &#43;4 hold D after for WRATH, knocks far on hit tho F34(canhold) m 43 -14/&#43;10 spinny, hold for guardbreak, press D to cancel to crouch DF1,1 mh 13 -4 DF1F for SENTAI DF1,2 mm 13 -14 HEAT DF2 m 15 -12 launch DF4,2,3 mmh 15 -8 SCREW35, DF4,2D for WRATH DF34,4 mhm 16 -14 unsafe, beefy throw on CH, highcrushes a bit D2 m 15 0 forces crouch, knocks for guaranteed of CH DB2 ll 20 double low, -3 on hit DB4,12 lm 16 -12 not natural needs ch, low is- on hit B1,1,3,3/F hmmm 18 -16 B1,1,3F for SENTAI, much better than finishing imo B2 m 16 -9 homing, pretty good range B4 h 18 -8 SCREW27 B12 m 18 -13 ARMOR UF1 h 13 -9 WRATH on hit UF4 m 17 -13 SCREW24 FF2F m 12 -9/&#43;2 hold F for SENTAI and make it safe FF3 m 20 -3 HEAT, slow tho, looks like hachis FF3 but doesnt launch FFF3 m 24 &#43;6 chip FFF4 h 26 &#43;4 homing, FFF4D for WRATH 14 mega crouch, DF after for FnDDF, probs evades a lot of shit wr1 mm 13 -10 on hit minithrow into SENTAI wr3,4 mh 15 -4 wr4,4&gt;D mm 11 -17/-10 hold D for WRATH cDF4 m 15 -14 combostart but eh ss4 l 18 QCB&gt;F2 extra throw, cool D4,1 on downed !! FnDDF 1,3 mm 19 -12 very coool 1,4 mh 19 -7 cooool, safe 2 -10/&#43;5 electric 3 m 15 -13/-9 can electric this DF4,2&gt;D lh 16 hold D for WRATH, sick DF4,4 ll 16 F3 SENTAI !! SENTAI F3 1,1,2hit, F2,3F, DF1F, B1,1,3F, FF2F, wr1, WRATH1F 1QCF2 mm 16 -16 ARMOR, just 1 has armor and is -14 on block instead 2 m 13 -4 SCREW 3 h 12 &#43;1 homing HEAT safe, duckable 4 m 26 &#43;4 slow but chip and &#43; 12 mm 14 -6 WRATH 34 lh 20 homing lowhigh 13 throw !!WRATH D12 DF4,2D, UF1, FFF4D, wr4,4D, FnDDF4,2D, SENTAI12 1,4 hm 12 -9 chip. cool, 1F for SENTAI 2 m 15 -9 HEAT 3,4 mm 28 &#43;8 hold D to go back to WRATH 4,2,2,12 eh, wall? finisher? 12 m 15 -13 ARMOR 34 m 18 -5 chip, cool D4,3 lm 16 -16 not natural without CH, risky 13 throw moves new heat 3,4,4, 34,4,4, F34,4
+...</p>
+    
+  </section>
+  <footer class="entry-footer"><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" style="user-select: text;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" style="user-select: text;"></rect><line x1="16" y1="2" x2="16" y2="6" style="user-select: text;"></line><line x1="8" y1="2" x2="8" y2="6" style="user-select: text;"></line><line x1="3" y1="10" x2="21" y2="10" style="user-select: text;"></line></svg>
+  <span>November 15, 2024</span></span><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon" style="user-select: text;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" style="user-select: text;"></path><line x1="7" y1="7" x2="7" y2="7" style="user-select: text;"></line></svg>
+  <span class="post-tags"><a href="//localhost:1313/tags/tekken-8/">Tekken 8</a></span></span>
+</footer>
+  <a class="entry-link" aria-label="post link to T8-Reina" href="//localhost:1313/charts/t8-reina/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>T8-Steve
+    </h2>
+  </header>
+  <section class="entry-content">
+    
+      <p> move hits start block notes 1,1 hh 10 -3 can duck sway etc 1,D1(B) hm 10 -6 not natural.B goes to FLICKER 1,1,2 hhh 10 -7 duck sway etc 1,1,D1 hhm 10 -6 not natural 1,2 hh 10 -3 duck sway etc, better dmg than 1,1 1,2,1,2/B/F hhhm 10 -10 not natural, 1,2,1B/F go to FLICKER/PEEKABOO 1,2,1,D2 hhhl 10 low finish 2,1,2/F/B hhm 12 -11 2,1,F/B go FLICKER/PEEKABOO 2,2 hm 12 -14 SCREW 12 mm 14 -12 HEAT F2,1,F/B mh 21 -5 slow start F/B go FLICKER/PEEKABOO. combo fill F2,1:2 mm 21 -10 bad F2,2,12 mmmm 21 -12 F2,2 goes LION unless u hold B F12,2 mmm 15 -13 good dmg, whiff punish? DF1,2 mh 13 -6 can duck sway etc DF1,2:1(B) mh 13 -2 B for FLICKER, combo fill, good counter DF1,2:2 mm 13 -10 meh FD1,2:F12 mhh 13 -3 meh DF2 m 16 -11 meh? D1 l 16 -2 on hit low, leaves u crouch D2,1,2 lmh 17 -2 can cancel last duckable high w sways and ducks DB2(cDB2) l 26 big low, knocks on counter DB3,2 lh 16 LION unless u hold B DB12 m 28 -13 ARMOR B1,B h 13 -14/1 CH king, hold b for FLICKER B1,2 hh 13 &#43;3/-1 goes to lion w &#43;3 unless u hold B B1,2:1 hm 13 -8 mix for people who duck B1,2 B1,D2,1/F hlm 13 -9 SCREW, B1,D2,F for PEEKABOO B2 m 17 -13 kinda evasive big mid UB2 h 17 &#43;3 goes to LION unless u hold B, 1,1&gt;1,2&gt;UB2&gt;B2 is solid UF2 m 22 -14 jumping launcher UF3,2 lh 36 jumping lowstart, goes LION unless u hold B UF4 m 23 -9 CH launcher FF2 m 14 -13 QFC1(B) m 16 -10(-3) HEAT, hold B for FLICKER -3 (B2 for armor after) QCF2(F) l 19 hold F for PEEKABOO FFF2 m 20 &#43;6 running &#43;6 HEAT wr1,1 mh 11 -3 can duck sway etc wr1,2 mm 11 -13 wr punish wr2,2 mm 13 -6/-10 goes to LION unless u hold B cDF2 m 16 -15 crouch launch !! DUCKING L 3, 1,1,3, 1,1,2,3, 1,2,3, DF1,2,3, D2,1,3, wr1,1,3 1,1/B mm 15 -13 1,B for FLICKER 1,2 mh 15 &#43;3/-1 goes LION with &#43;3 unless u hold B. homing 1,2:1 mm 15 -8 1,F1,1(B) mmh 15 &#43;3/&#43;4 hold B for FLICKER w &#43;4 2,1/F mm 14 -8 2F for PEEKABOO !! DUCKING R 4, 1,1,4, 1,1,2,4, 1,2,4, DF1,2,4, D2,1,4, wr1,1,4 1,2/F mh 14-15 &#43;3/-1 goes LION with &#43;3 unless u hold B. homing. 1F for PEEKABOO 1,2:1 mm 14-16 -8 2 m 15 -13 big ass hit !! QUICK SPIN 34 2 m 23 -3 HEAT D2 l 34 low F or U/D&gt;F PEEKABOO U/D1 m 12 -3 CYCLONE punch U/D2 l 22 CYCLONE low !!DUCKING HoldF3 for buff F3, 1,1,F3, 1,1,2,F3, 1,2,F3, DF1,2,F3, D2,1,F3, wr1,1,F3 1 m 19 -7 CH launch, grounded hit 2 m 19 -14 launch F2 h 15 &#43;3 hold F3 to stay ducking 12,12,12,12 mmmm 16 -12 (heat, held f3/DF34) 13/24 grab DF34 is heat boosted ducking in.1/2 after, 2 is more dmg, 1 can combo? !!PEEKABOO F34, 1,2,1F, 2,1F, F2,1F, B1,D2F, QCF2F, DL2F/DR1F 1,2,1 hhm 12 -13 STAYS 2 h 14 -3 punch parry, CH, homing 12 grab F2,1 mm 18 &#43;1 could be interruptable, or good. big hit. wall/finish? F12 hh 12 -5 after 2,1F, F2,1,F, B1D2F, QCF2F DF1,1,2,1 mmmm 15 -13 ok DF1,2 mh 15 -6 chip DF2 m 16 -10 launch, but STAYS D1 l 15 low, STAYS D2 l 28 big slow low B1,1,2,1(B) mmmm 17 -10 hold B for FLICKER B2 m 28 -13 big evading hit UF2 m 17 -15 big launch !!SWAYING B3, 1,1,B3, 1,1,2,B3, 1,2,B3, DF1,2,B3, D2,1,B3, wr1,1,B3 1 m 16 -1 chip 2 counter hits above, only hits on attacks 12 shove shove !!FLICKER B34, 1,D1B, 1,2,1B, 2,1B, F2,1B, DF1,2:1B, B1B, QCF1B, 1,1,1,2 hhhm 12 -12 SCREW, press 34 during for SPIN (2/D2 after for heat/low) 1,F1 hm 12 -5 get duckers 1,D1 hh 12 0 safe exit, big CH 2 m 18 -5 chip, CH launch, do from 2,1B/ F2,1B 12 gra grab B2 h 14 -9 safe ARMOR SCREW !!LION UB3, F2,2, DB3,2, B1,2, UB2, wr2,2, 1 m 14 -4 HEAT homing 2 m 16 -13 SCREW, launch 12 m 18 &#43;12 guard break </p>
+    
+  </section>
+  <footer class="entry-footer"><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" style="user-select: text;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" style="user-select: text;"></rect><line x1="16" y1="2" x2="16" y2="6" style="user-select: text;"></line><line x1="8" y1="2" x2="8" y2="6" style="user-select: text;"></line><line x1="3" y1="10" x2="21" y2="10" style="user-select: text;"></line></svg>
+  <span>November 15, 2024</span></span><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon" style="user-select: text;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" style="user-select: text;"></path><line x1="7" y1="7" x2="7" y2="7" style="user-select: text;"></line></svg>
+  <span class="post-tags"><a href="//localhost:1313/tags/tekken-8/">Tekken 8</a></span></span>
+</footer>
+  <a class="entry-link" aria-label="post link to T8-Steve" href="//localhost:1313/charts/t8-steve/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>T8-Xiaoyu
+    </h2>
+  </header>
+  <section class="entry-content">
+    
+      <p>key moves move note POKES 1,2,1 safe DF1 (hold DF to stay in neutral) one of the best pokes, can do a couple, transition BT, sidestep after etc 1.. 4 (1 is used to CH fish), on 4 CH do 34 / UB4
+1,D2..B3 DF4 fastest good mid poke 3 best whiff/block punish, good range, can do from sidestep etc. FF3 BT good bt poke, CH is &#43;12 FF1D&gt;2,1 F23 throw sideswap, do F3,1,4 to screw after and shit, big MIDS F2,1 one of her best strings DB1 HEAT, very steppable UF4&gt;D12 conter hit pressure mid combo starter, phoenix. &gt;34, 12,12 34(D) conter hit pressure mid combo starter,D for phoenix. 4 after for ch fish etc F4 slow high keepout homing, &#43;13 on hit. guaranteed B4,1 or F12 after FF4 gap closer, awesome, goes into hypnotist (also one of best launchers on ch) UB3 huge launch, -13 on block but in PHOENIX (one of best whiff punishers) B4,1 whiff &amp; block punish into HEAT UB4 big armor, hits grounded, makes FF34 into a launcher 12 safe launcher (12&gt;FF3&gt;DF4&gt;F3,1,4 screw) B12 15f launch LOWS D3,4 DB4/DB3/BTDB4 CH gives free F12 of B4,1 ss4 crouches DB2 &#43;5 on hit in BT DF3 snake edge PHOENIX D12 (or D&gt;D12). UF4D12. 34D. FFF3D. D1D. UB3. FF1D. cDF4 D12 high crush launch &gt;B3, 1,2, D12&gt;UFn3 (hard as shit idk bout this) 12 CH launch (&gt;FF3, DF4, F3,1,4), 4 after on block to CH fish, throw this move out a lot 4 fastest move out 1,4 BT screw string, safe but into bt UFn3 combo fill but also safe 2,1 main heat engager from successful phoenix F4,4 34..12,12 mash 12 after for wr12,12, 34 anyway gives a lot of good oki situations, mess with em BACKTURN B34 1D2. DF1. FF3. DB2. FF2,1B. DF3B. B2. movement sidestep is bigger, B34 rolls away U/D34 big rolling sidestep 4 unsafe! fastest 13f mid launcher. finisher after BT2,2 or whiff punish after BTB34 2,2,1D / 2,1B stance transitions into phoeni and hypno 1 CH tool, crucial for keeping em in check. use often after BT transitioning moves 12 on hit press 12 again but confirm it tho 12,4 high into HEAT, can hitconfirm if they duck F34,34 high crush into launch, good after stuff like FF3. one of most damaging launchers D3 main low poke, 4 followups but guaranteed only on CH B3/D1 fast, catches disrespect F23 throw sideswap, do F3,1,4 to screw after and shit, big HYPNOTIST 1D2B. F2,1B. PHO1B. BT2,1B. FF4 2 heat, safe, &#43;5/&#43;9 if you take more steps. 3 low. the more steps u take the better 4 fastest. &gt;34 on hit HEAT F2,1,2 /FF1,2 &#43;6 on block, hold any dir to stay in neutral otherwise goes BT heat engage&gt; FF1D / FFF3 for PHO - FF4 for HYPNO with &#43; frames B12&gt; F3,1, 1,2 TORNADO UB12&gt;34, F2,1 wall carry
+heat, DB1F, DB1
+heat
+DB1F, DF2, F2, F3,1&gt;1,2 (dash) UF4D&gt;ws4
+BT12,4F, B3&gt;2,1, F2, F3,1,4, (dash) UF4D&gt;ws4
+...</p>
+    
+  </section>
+  <footer class="entry-footer"><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" style="user-select: text;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" style="user-select: text;"></rect><line x1="16" y1="2" x2="16" y2="6" style="user-select: text;"></line><line x1="8" y1="2" x2="8" y2="6" style="user-select: text;"></line><line x1="3" y1="10" x2="21" y2="10" style="user-select: text;"></line></svg>
+  <span>November 15, 2024</span></span><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon" style="user-select: text;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" style="user-select: text;"></path><line x1="7" y1="7" x2="7" y2="7" style="user-select: text;"></line></svg>
+  <span class="post-tags"><a href="//localhost:1313/tags/tekken-8/">Tekken 8</a></span></span>
+</footer>
+  <a class="entry-link" aria-label="post link to T8-Xiaoyu" href="//localhost:1313/charts/t8-xiaoyu/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>T8-Zafina
+    </h2>
+  </header>
+  <section class="entry-content">
+    
+      <p>Strings 1,4&gt; DF1 TARA
+1,3&gt; 3,3&gt; B12 SCR
+1,3&gt; 3,3&gt; DF3,3 SCR
+1,3&gt; D3,3 SCR
+1,3&gt; 12D(hit)&gt;DF1 SCR TARA
+1,3&gt; 12D&gt; 3&gt; DF1(only if 3 hits) SCR TARA
+3(hit)&gt;D3,3 SCR
+3(block)B12 (quick highcrush low) SCR
+3(block)DF3,3 (highcrush snake edge) SCR
+1,2,3(hit)&gt;12D&gt; DF1 SCR TARA
+D3D&gt; MAN4,3 (big launch)&gt; MAN1,3&gt; 1, DF1, FFF12, DF1 1,2&gt; 12(CH)
+DF1&gt; 12(CH)
+DF2, UF1, F2,3, (SC)DF1, FFF12, (t)DF1 62
+DF2, FF2, DF1, F2,3, (SC)DF1, FFF12, (t)DF1 65
+MAN4,3 (big launch)&gt; MAN1,3&gt; 1, DF1, FFF12, DF1 65
+DF23&gt; F2,3, DF1, FFF12, DF1
+...</p>
+    
+  </section>
+  <footer class="entry-footer"><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" style="user-select: text;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" style="user-select: text;"></rect><line x1="16" y1="2" x2="16" y2="6" style="user-select: text;"></line><line x1="8" y1="2" x2="8" y2="6" style="user-select: text;"></line><line x1="3" y1="10" x2="21" y2="10" style="user-select: text;"></line></svg>
+  <span>November 15, 2024</span></span><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon" style="user-select: text;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" style="user-select: text;"></path><line x1="7" y1="7" x2="7" y2="7" style="user-select: text;"></line></svg>
+  <span class="post-tags"><a href="//localhost:1313/tags/tekken-8/">Tekken 8</a></span></span>
+</footer>
+  <a class="entry-link" aria-label="post link to T8-Zafina" href="//localhost:1313/charts/t8-zafina/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>VF5-Brad
+    </h2>
+  </header>
+  <section class="entry-content">
+    
+      <p>
+Cond
+1,1 F/U/D DUCKING / SLIPPING 1,1,1,2 knocks
+1,1,2 low
+1,F1,2 1,2 F1 F/U/D DUCKING / SLIPPING midstart 12f
+F1,2
+B1,2 F/U/D** DUCKING / SLIPPING DF1,1
+DF1,2
+DF1,12
+DB1 steve long slow low
+2,1 F/U/D DUCKING / SLIPPING close range
+2,1,2
+F2,1 F/U/D DUCKING / SLIPPING
+B2 F/U/D DUCKING / SLIPPING mega range
+D2,2 lowhigh
+DB2 long low
+DF2 pretty fast mid
+UF2 on some knockdowns
+12,1,D/U&gt;1
+12,1,B&gt;1 combostart, feels cool
+F12 combostart
+BF12 knocks FAR (ringout)
+D12,1,1,F1 increasing in hits from past 2, leave out 1s to shorten
+23,2 big sweeping high to sweeping low
+F23 launcher
+D23 sweeping low
+DB23 mega long low
+123 ga muay
+wall &gt; F123?
+...</p>
+    
+  </section>
+  <footer class="entry-footer"><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" style="user-select: text;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" style="user-select: text;"></rect><line x1="16" y1="2" x2="16" y2="6" style="user-select: text;"></line><line x1="8" y1="2" x2="8" y2="6" style="user-select: text;"></line><line x1="3" y1="10" x2="21" y2="10" style="user-select: text;"></line></svg>
+  <span>November 15, 2024</span></span><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon" style="user-select: text;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" style="user-select: text;"></path><line x1="7" y1="7" x2="7" y2="7" style="user-select: text;"></line></svg>
+  <span class="post-tags"><a href="//localhost:1313/tags/virtua-fighter-5/">Virtua Fighter 5</a></span></span>
+</footer>
+  <a class="entry-link" aria-label="post link to VF5-Brad" href="//localhost:1313/charts/vf5-brad/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>VF5-El Blaze
+    </h2>
+  </header>
+  <section class="entry-content">
+    
+      <p>cond
+1,1,1,2(F) ROCKET
+1,1,2 knocks
+1,2
+1,D2 hl
+F1,2 knocks
+BF1,1,2 high knock, short range
+BF1,1,D2 low mix BF1,2,2 (F) ROCKET or B for bt
+B1,2 (F) ROCKET
+DB1 slow low
+2,2,2, (F) ROCKET
+F2 (F) ROCKET
+B2,1,1
+B2,1,2 (F) ROCKET or B for bt
+D2,1,2 (F) ROCKET GOAT move for looping and mixing
+DB2
+UF2 (F) ROCKET idk bout rocket here
+c.F12 big crumple
+UF12,2 (F) ROCKET
+F23 launch
+D23
+DB23 slow stationary low dropkick
+123 deflect
+123,1
+123,2, 13 on hit
+123,12
+UF/DF123 tiger step
+1, 13 on hit
+2 (F) ROCKET
+13, 13
+U1 combostart
+DF1,1DF/UF TIGER STEP
+B2,1DF/UF TIGER STEP
+D2,1DF/UF TIGER STEP
+...</p>
+    
+  </section>
+  <footer class="entry-footer"><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" style="user-select: text;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" style="user-select: text;"></rect><line x1="16" y1="2" x2="16" y2="6" style="user-select: text;"></line><line x1="8" y1="2" x2="8" y2="6" style="user-select: text;"></line><line x1="3" y1="10" x2="21" y2="10" style="user-select: text;"></line></svg>
+  <span>November 15, 2024</span></span><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon" style="user-select: text;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" style="user-select: text;"></path><line x1="7" y1="7" x2="7" y2="7" style="user-select: text;"></line></svg>
+  <span class="post-tags"><a href="//localhost:1313/tags/virtua-fighter-5/">Virtua Fighter 5</a></span></span>
+</footer>
+  <a class="entry-link" aria-label="post link to VF5-El Blaze" href="//localhost:1313/charts/vf5-elblaze/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="//localhost:1313/charts/">« Prev Page</a>
+    <a class="next" href="//localhost:1313/charts/page/3/">Next Page »</a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+  <span>&copy; 2024 <a href="//localhost:1313/">RVDE</a></span><span style="display: inline-block; margin-left: 1em;">
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+  </span>
+  <span style="display: inline-block; margin-left: 1em;">
+    Powered by
+    <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+    <a href="https://github.com/reorx/hugo-PaperModX/" rel="noopener" target="_blank">PaperModX</a>
+  </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+    <path d="M12 6H0l6-6z" />
+  </svg>
+</a>
+
+<script>
+  (function() {
+     
+    const disableThemeToggle = '' == '1';
+    if (disableThemeToggle) {
+      return;
+    }
+
+    let button = document.getElementById("theme-toggle")
+    
+    button.removeEventListener('click', toggleThemeListener)
+    
+    button.addEventListener('click', toggleThemeListener)
+  })();
+</script>
+
+<script>
+  (function () {
+    let menu = document.getElementById('menu')
+    if (menu) {
+      menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+      menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+      }
+    }
+
+    const disableSmoothScroll = '' == '1';
+    const enableInstantClick = '' == '1';
+    
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || disableSmoothScroll || enableInstantClick) {
+      return;
+    }
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        var id = this.getAttribute("href").substr(1);
+        document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+          behavior: "smooth"
+        });
+        if (id === "top") {
+          history.replaceState(null, null, " ");
+        } else {
+          history.pushState(null, null, `#${id}`);
+        }
+      });
+    });
+  })();
+</script>
+<script>
+  var mybutton = document.getElementById("top-link");
+  window.onscroll = function () {
+    if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+      mybutton.style.visibility = "visible";
+      mybutton.style.opacity = "1";
+    } else {
+      mybutton.style.visibility = "hidden";
+      mybutton.style.opacity = "0";
+    }
+  };
+</script>
+<script>
+  if (window.scrollListeners) {
+    
+    for (const listener of scrollListeners) {
+      window.removeEventListener('scroll', listener)
+    }
+  }
+  window.scrollListeners = []
+</script>
+
+
+
+<script src="/js/medium-zoom.min.js" data-no-instant
+></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/simplelightbox@2.4.0/dist/simple-lightbox.min.js"></script>
+<script src="/js/masonry.pkgd.min.js"></script>
+<script src="/js/chromatic-aberration.js"></script>
+<script src="/js/dyna-panels.js"></script>
+
+</body>
+
+</html>
