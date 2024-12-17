@@ -6,6 +6,8 @@ tags: ["Tekken 8"]
 categories: ["Charts"]
 ---
 
+UF3, F2,3, FF3F, UF34,34, U3,3, heat  F2,3<br>
+
 1,1,(*BT*)D34, D3,4,(microdash)DB4(dash)U3,3F, 1,4<br>
 **HEAT** 1,1,(*BT*)D34, D3,4,(microdash)DB4(dash)U3,3F, 2,1F(heatdash)3,2F>1,4<br>
 **HEAT AND SUPER** 1,1,(*BT*)D34, D3,4,(microdash)DB4(dash)U3,3F, 2,1F(heatdash)SUPER<br>
