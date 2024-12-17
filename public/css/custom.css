@@ -16,7 +16,27 @@ p {
     color:rgb(126, 45, 219);
     font-weight: 600;
 }
+.type-charts table{
+    
+    border-collapse: collapse;  
+    font-size: 0.65em; 
+    
+}
+/*make charts table have two columns when window is wide enough */
+@media screen and (min-width: 1200px) {
+    .type-charts table{
+        columns: 2;
+    }
+    
+}
 
+.type-charts th, td{
+    border: 1px solid rgba(196, 196, 196, 0.096);
+    padding: 4px !important;
+}
+.type-charts table tr:nth-child(even){
+    background-color: rgba(20, 20, 20, 0.151);
+}
 
 .horizontal-line{
     width: 100%;

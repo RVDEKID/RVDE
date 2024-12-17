@@ -17639,7 +17639,8 @@ ff2&gt;1/2</p>
       <pubDate>Fri, 15 Nov 2024 14:01:57 +0200</pubDate>
       
       <guid>//localhost:1313/charts/t8-lili/</guid>
-      <description>&lt;p&gt;1,1,(&lt;em&gt;BT&lt;/em&gt;)D34, D3,4,(microdash)DB4(dash)U3,3F, 1,4&lt;br&gt;
+      <description>&lt;p&gt;UF3, F2,3, FF3F, UF34,34, U3,3, heat  F2,3&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;1,1,(&lt;em&gt;BT&lt;/em&gt;)D34, D3,4,(microdash)DB4(dash)U3,3F, 1,4&lt;br&gt;
 &lt;strong&gt;HEAT&lt;/strong&gt; 1,1,(&lt;em&gt;BT&lt;/em&gt;)D34, D3,4,(microdash)DB4(dash)U3,3F, 2,1F(heatdash)3,2F&amp;gt;1,4&lt;br&gt;
 &lt;strong&gt;HEAT AND SUPER&lt;/strong&gt; 1,1,(&lt;em&gt;BT&lt;/em&gt;)D34, D3,4,(microdash)DB4(dash)U3,3F, 2,1F(heatdash)SUPER&lt;br&gt;
 DF34&amp;gt;3,4, 1, D2,2,4, FF3F1,4&lt;br&gt;
@@ -18563,7 +18564,8 @@ FF2, D1,2B&amp;gt;1,2, FF3F&amp;gt; 1,4&lt;/p&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;</description>
-      <content:encoded><![CDATA[<p>1,1,(<em>BT</em>)D34, D3,4,(microdash)DB4(dash)U3,3F, 1,4<br>
+      <content:encoded><![CDATA[<p>UF3, F2,3, FF3F, UF34,34, U3,3, heat  F2,3<br></p>
+<p>1,1,(<em>BT</em>)D34, D3,4,(microdash)DB4(dash)U3,3F, 1,4<br>
 <strong>HEAT</strong> 1,1,(<em>BT</em>)D34, D3,4,(microdash)DB4(dash)U3,3F, 2,1F(heatdash)3,2F&gt;1,4<br>
 <strong>HEAT AND SUPER</strong> 1,1,(<em>BT</em>)D34, D3,4,(microdash)DB4(dash)U3,3F, 2,1F(heatdash)SUPER<br>
 DF34&gt;3,4, 1, D2,2,4, FF3F1,4<br>
