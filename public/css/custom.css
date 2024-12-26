@@ -24,10 +24,10 @@ p {
 }
 /*make charts table have two columns when window is wide enough */
 @media screen and (min-width: 1200px) {
-    .type-charts table{
+    .type-charts table {
+        display: block; /* Treat the table as a block container */
         columns: 2;
     }
-    
 }
 
 .type-charts th, td{
