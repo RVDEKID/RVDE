@@ -6,6 +6,8 @@ tags: ["Tekken 8"]
 categories: ["Charts"]
 ---
 
+ramukselle
+
 UF4, DF4,3, DF4,2,12, dash UF3, B12   60<br>
 UF4, DF4,3, DF4,2,12, dash UF3, 3,12   64<br>
 F3,4, FF4,3, 1, DF4,2,12, dash UF3, B12 73<br>

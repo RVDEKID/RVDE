@@ -6,7 +6,6 @@ tags: ["Tekken 8"]
 categories: ["Charts"]
 ---
 
-Rasmukselle :) 
 
 ## new
 F3 is a big safe counter hitter, use after anything hits. even just 1,2> F3 frametraps if the 1,2 hits so if they mash they eat the counter and u combo (B2,1,4 or 3,3,2> something)
